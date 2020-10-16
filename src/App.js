@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
-function App() {
-  return (
+// Header, footer, friends list, profile, posts
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user:{
+        username: "JGeorgos",
+        password: "JG123",
+        profileIMG: "https://i.imgur.com/L54fbGc.png",
+        posts: [],
+        friends: []
+      },
+      loggedIn: false
+    }
+  }
+
+  logIn (event, userData) {
+    event.preventDefault();
+    const user = this.state.user;
+    if (userData.username === user.username && userData.password === user.password) {
+      this.setState({
+        loggedIn: true,
+        error: ""
+      })
+    }else{
+      this.setState({
+        error:"Incorrect Credentials"
+      })
+    }
+  }
+
+  render(){
+      return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1> Hello World </h1>
+        <button>Log in / Register</button>
+
       </header>
+
     </div>
   );
+  }
+
 }
 
 export default App;
