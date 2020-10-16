@@ -8,7 +8,7 @@ class Profile extends Component{
 
     render(){
         return(
-            <div>
+            <div className="wrapper">
                 <img className="UserImage" src={this.props.user.profileIMG} alt="User Image" />
                 <p>{this.props.user.username}</p>
                 {this.props.user.post && this.props.user.posts.map((post, id) => (

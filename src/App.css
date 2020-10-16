@@ -1,10 +1,21 @@
 header{
   display: flex;
   justify-content: space-between;
+  align-items:center;
   margin: 0px 25px;
+}
+
+button{
+  height:25px;
 }
 
 .UserImage{
   height: 150px;
   width: 150px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
