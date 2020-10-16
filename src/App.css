@@ -3,3 +3,8 @@ header{
   justify-content: space-between;
   margin: 0px 25px;
 }
+
+.UserImage{
+  height: 150px;
+  width: 150px;
+}
